@@ -8,7 +8,7 @@ var db = mongojs(
 );
 
 router.get("/ranking", (req, res) => {
-  db.ranking.find({}).sort({puntaje:1}).limit(5).skip(1).toArray((err, docs) => {
+  db.ranking.find({}).sort({puntaje:1}).limit(5).toArray((err, docs) => {
     res.status(200).send(docs);
   });
 });
